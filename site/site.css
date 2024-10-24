@@ -1,104 +1,142 @@
+/* General Styles */
 html {
-    font-size: 14px;
-  }
-  
-  @media (min-width: 768px) {
-    html {
-      font-size: 16px;
-    }
-  }
-  
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
   html {
-    position: relative;
-    min-height: 100%;
+      font-size: 16px;
   }
-  
-  body {
-    margin-bottom: 60px;
-    margin:0;
-    background-color: lightgray;
-  }
+}
 
-   /* Remove the navbar's default margin-bottom and rounded borders */ 
-   .navbar {
-    margin-bottom: 0;
-    border-radius: 0;
-  }
-  
-  .main {
-    height: 90%;
-    width: 100%;
-  }
+html {
+  position: relative;
+  min-height: 100%;
+}
 
-  /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-  .row.content {height: 450px}
-  
-  /* Set gray background color and 100% height */
+body {
+  margin: 0;
+  margin-bottom: 60px; /* Space for footer */
+  background-color: lightgray;
+}
+
+* {
+  box-sizing: border-box; /* Ensures padding and border are included in width/height */
+}
+
+/* Layout Styles */
+.row.content {
+  height: 450px; /* Set height for grid */
+}
+
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+  height: 100%; /* Full height for sidenav */
+}
+
+/* Footer Styles */
+footer {
+  background-color: #555;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+/* Centered Images */
+.img-center {
+  text-align: center !important;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 767px) {
   .sidenav {
-    padding-top: 20px;
-    background-color: #f1f1f1;
-    height: 100%;
-  }
-  
-  /* Set black background color, white text and some padding */
-  footer {
-    background-color: #555;
-    color: white;
-    padding: 15px;
-  }
-  
-  /* On small screens, set height to 'auto' for sidenav and grid */
-  @media screen and (max-width: 767px) {
-    .sidenav {
       height: auto;
       padding: 15px;
-    }
-    .row.content {height:auto;} 
   }
-
-/*Slide Show CSS reference from W3C*/
-* {box-sizing:border-box}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+  .row.content {
+      height: auto; /* Auto height on small screens */
+  }
 }
 
-/* Hide the images by default */
-.mySlides {
-  display: none;
+/* Slideshow Styles */
+.image-container {
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Hide overflow */
+}
+img {
+  width: 100%; /* Sets width to 100% of the container */
+  height: auto; /* Maintains aspect ratio */
+  object-fit: cover; /* Fills the container while maintaining aspect ratio */
+}
+#homeimg{
+  filter: grayscale(50%); /* Adjust the percentage for more or less grey */
+  opacity: 0.7; /* Adjust the opacity for transparency */
 }
 
-/* Next & previous buttons */
+.text-overlay {
+  position: absolute; /* Positioning over the image */
+  color: white; /* Text color */
+  font-family: 'Brush Script MT', cursive; /* Calligraphy style font */
+  font-size: 3em; /* Adjust size as needed */
+  text-align: center; /* Center text */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for better readability */
+}
+
+.desc-header {
+  color: rgb(0, 0, 0); /* Text color */
+  font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif; /* Chinese font */ /* 选择多个字体 , 'Microsoft YaHei', 'Source Han Sans', 'Source Serif Pro', sans-serif*/
+  font-size: 2em; /* Adjust size as needed */
+  text-align: center; /* Center text */
+  text-shadow: 2px 2px 4px rgba(244, 239, 239, 0.7); /* Add shadow for better readability */
+}
+
+.desc-deteil {
+  color: rgb(44, 44, 44); /* Text color */
+  font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif; /* Chinese font */ /* 选择多个字体 , 'Microsoft YaHei', 'Source Han Sans', 'Source Serif Pro', sans-serif*/
+  font-size: 1em; /* Adjust size as needed */
+  text-shadow: 2px 2px 4px rgba(244, 239, 239, 0.7); /* Add shadow for better readability */
+  text-align: center; /* Center text */
+}
+
+.desc-warn {
+  color: rgb(245, 8, 8); /* Text color */
+  font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif; /* Chinese font */ /* 选择多个字体 , 'Microsoft YaHei', 'Source Han Sans', 'Source Serif Pro', sans-serif*/
+  font-size: 2em; /* Adjust size as needed */
+  text-align: center; /* Center text */
+  text-shadow: 2px 2px 4px rgba(244, 239, 239, 0.7); /* Add shadow for better readability */
+}
+
+.desc-price {
+  color: rgb(52, 52, 109); /* Text color */
+  font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif; /* Chinese font */ /* 选择多个字体 , 'Microsoft YaHei', 'Source Han Sans', 'Source Serif Pro', sans-serif*/
+  font-size: 2em; /* Adjust size as needed */
+  text-shadow: 1px 1px 1px rgba(236, 233, 233, 0.7); /* Add shadow for better readability */
+  text-align: center; /* Center text */
+  font-weight: bolder;
+
+}
+
+
+/* Optional: Adjust button positions */
 .prev, .next {
-  cursor: pointer;
-  position: absolute;
   top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+  transform: translateY(-50%); /* Center vertically */
 }
 
-/* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8); /* Hover effect */
 }
 
-/* Caption text */
+/* Caption and Number Text */
 .text {
   color: #f2f2f2;
   font-size: 15px;
@@ -109,7 +147,6 @@ html {
   text-align: center;
 }
 
-/* Number text (1/3 etc) */
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
@@ -118,7 +155,7 @@ html {
   top: 0;
 }
 
-/* The dots/bullets/indicators */
+/* Dots for Slideshow */
 .dot {
   cursor: pointer;
   height: 15px;
@@ -131,34 +168,56 @@ html {
 }
 
 .active, .dot:hover {
-  background-color: #717171;
+  background-color: #717171; /* Active dot color */
 }
 
-/* Fading animation */
+/* Fade Animation */
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+  from { opacity: .4; }
+  to { opacity: 1; }
 }
-  
+
+/* Example Border */
 .bd-example {
   padding: 1.5rem;
-  margin-right: 1.5rem;
-  margin-left: 1.5rem;
+  margin: 1.5rem auto; /* Centering */
   border-width: .2rem;
-}
-
-.bd-example {
   position: relative;
-  border-width: .2rem 0 0;
 }
 
-.bd-example::after {
-  display: block;
-  clear: both;
-  content: "";
+/* Additional Background */
+.darkbg {
+  background-color: black;
 }
+
+/* Marquee Styles */
+#comment {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%; /* Full width */
+}
+
+.marquee-img {
+  width: 350px; /* Fixed width */
+  height: auto; /* Maintain aspect ratio */
+  vertical-align: middle; /* Align images vertically */
+  border: 5px solid #000; /* Add a solid black border */
+  border-radius: 5px; /* Optional: add rounded corners */
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
+  margin-right: 40px; /* Adjust this value for more space */
+}
+
+.marquee-img:last-child {
+  margin-right: 0; /* Remove margin from the last image */
+}
+
+.marquee-img:hover {
+  transform: scale(1.2); /* Scale image up on hover */
+}
+
+
